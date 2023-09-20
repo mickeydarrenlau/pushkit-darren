@@ -3,8 +3,8 @@
 This is a custom version of the original plugin
 
 
-Change Log of what I edited (Currently v0.2.0)
-1. Added obsidian://darrens-kit/export-full for exporting the whole vault without intervention - Added at v0.2.0
+Change Log of what I edited (Currently 0.2.0)
+1. Added obsidian://darrens-kit/export-full for exporting the whole vault without intervention - Added at 0.2.0
 
 
 - the plugin is desktop only (uses node filesystem)

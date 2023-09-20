@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
 
-const targetVersion = '0.0.1'
+const targetVersion = 'v0.2.0'
 
 // read minAppVersion from manifest.json and bump version to target version
 let manifest = JSON.parse(readFileSync("manifest.json", "utf8"));

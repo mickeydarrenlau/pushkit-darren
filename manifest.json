@@ -1,0 +1,10 @@
+{
+	"id": "darren-sobsidian-kit",
+	"name": "Darren's KIT",
+	"version": "0.0.1",
+	"minAppVersion": "0.0.1",
+	"description": "Publish full featured web apps with markdown",
+	"author": "mickeydarrenlau",
+	"authorUrl": "https://github.com/mickeydarrenlau/pushkit-darren",
+	"isDesktopOnly": true
+}

@@ -1,6 +1,11 @@
-# KIT ~ Obsidian Plugin
+# Darren's KIT ~ Obsidian Plugin
 
-[![made-with-javascript](https://img.shields.io/badge/obsidiankit-1.0.1-%3Ccolor%3E.svg)](https://github.com/publishkit/obsidian/releases/tag/1.0.1)
+This is a custom version of the original plugin
+
+
+Change Log of what I edited (Currently v0.2.0)
+1. Added obsidian://darrens-kit/full-export for exporting the whole vault without intervention - Added at v0.2.0
+
 
 - the plugin is desktop only (uses node filesystem)
 - it has only been tested on mac
@@ -8,7 +13,7 @@
 
 ## install
 
-- repo url https://github.com/publishkit/obsidian
+- repo url https://github.com/mickeydarrenlau/pushkit-darren
 - manually clone this repo inside your `.obsidian/plugins` folder.
 - or install via the [BRAT](https://github.com/TfTHacker/obsidian42-brat) plugin
 

@@ -78,7 +78,7 @@ class PKPlugin extends Plugin {
 			this.runCommand("displayStatus", file);
 		});
 
-		this.registerObsidianProtocolHandler("kit/export-full", async (e) => {
+		this.registerObsidianProtocolHandler("darrens-kit/export-full", async (e) => {
 			const files = await this.pklib.vault.lsFiles();
 			const result = await this.pklib.exportFile(files, { dry: false });
 		})

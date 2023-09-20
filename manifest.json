@@ -4,7 +4,7 @@
 	"version": "0.2.0",
 	"minAppVersion": "1.3.2",
 	"description": "Publish full featured web apps with markdown",
-	"author": "mickeydarrenlau",
-	"authorUrl": "https://github.com/mickeydarrenlau/pushkit-darren",
+	"author": "mickeydarrenlau (forked from https://github.com/publishkit/obsidian)",
+	"authorUrl": "https://github.com/mickeydarrenlau",
 	"isDesktopOnly": true
 }

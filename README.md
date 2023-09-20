@@ -1,6 +1,6 @@
 # Darren's KIT ~ Obsidian Plugin
 
-This is a custom version of the original plugin
+This is a custom version of the original plugin from https://github.com/publishkit/obsidian
 
 
 Change Log of what I edited (Currently v0.2.0)

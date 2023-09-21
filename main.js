@@ -17714,7 +17714,7 @@ var PKPlugin = class extends import_obsidian7.Plugin {
       });
       pklib.parser.setRemovers({
         el: ".collapse-indicator,.list-bullet,.inline-title,.embedded-backlinks,.copy-code-button,.frontmatter-container,.frontmatter,.markdown-preview-pusher,.mod-header,.markdown-embed-link,.markdown-embed,.embed-title",
-        class: ".pdf-toolbar,.pdf-container,.list-view-ul,.table-view-table,.pdf-embed,.media-embed,.internal-embed,.has-list-bullet,.contains-task-list,.task-list-item,.task-list-item-checkbox,.is-checked,.dataview-inline-query,.image-embed,.is-loaded",
+        class: ".pdf-toolbar,.pdf-container,.list-view-ul,.table-view-table,.pdf-embed,.media-embed,.internal-embed,.has-list-bullet,.contains-task-list,.task-list-item,.task-list-item-checkbox,.is-checked,.dataview-inline-query,.image-embed,.is-loaded, .metadata-container",
         attr: "rel,data-task,data-line,data-heading,data-href,aria-label,aria-label-position,referrerpolicy",
         emptyAttr: "class,data-callout-metadata,data-callout-fold"
       });

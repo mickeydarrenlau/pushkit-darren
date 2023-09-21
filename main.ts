@@ -4,6 +4,7 @@ import Setup from "src/setup";
 import Launcher from "src/launcher";
 import Report from "src/report";
 import ReportWithoutModal from "src/report without_confirm";
+import { SettingTab } from "src/setting";
 import { Commands } from "src/commands";
 // @ts-ignore
 import PKLib from "@publishkit/pklib";
@@ -77,6 +78,8 @@ class PKPlugin extends Plugin {
 			if (pklib.isProcessing) return;
 			this.runCommand("displayStatus", file);
 		});
+
+		this.addSettingTab(new SettingTab(this.app, this));
 
 		this.registerObsidianProtocolHandler("darrens-kit/export-full", async (e) => {
 			const files = await this.pklib.vault.lsFiles();

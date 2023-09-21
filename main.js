@@ -17296,7 +17296,7 @@ __export(main_exports, {
   default: () => main_default
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian6 = require("obsidian");
+var import_obsidian7 = require("obsidian");
 
 // src/obs.ts
 var import_obsidian = require("obsidian");
@@ -17541,17 +17541,51 @@ var ReportModal2 = class extends import_obsidian5.Modal {
   }
 };
 
+// src/setting.ts
+var import_obsidian6 = require("obsidian");
+var SettingTab = class extends import_obsidian6.PluginSettingTab {
+  constructor(app2, plugin) {
+    super(app2, plugin);
+    this.plugin = plugin;
+    this.pkplugin = plugin;
+  }
+  async display() {
+    let { containerEl, pkplugin } = this;
+    const { pklib } = pkplugin;
+    containerEl.empty();
+    containerEl.createEl("h1", { text: "Darren's KIT" });
+    if (!await this.plugin.app.vault.adapter.exists("kitrc.md")) {
+      new import_obsidian6.Setting(containerEl).setName("Config Not Found").setDesc("Create it now?").addButton((btn) => btn.setButtonText("Make the config").setCta().onClick(() => {
+        new SetupModal(this.plugin, async (data) => {
+          await pklib.createKitrc(data);
+          const file = this.obs.getFile("kitrc.md");
+          file && this.obs.openFile(file, { newPane: true });
+        }).open();
+      }));
+    } else {
+      containerEl.createEl("h1", { text: "Edit Config Here" });
+      const outputEl = new import_obsidian6.TextAreaComponent(containerEl).setValue(await this.plugin.app.vault.adapter.read("kitrc.md")).setDisabled(false).then((cb) => {
+        cb.inputEl.style.width = "100%";
+        cb.inputEl.style.height = "100%";
+      });
+      new import_obsidian6.Setting(containerEl).addButton((btn) => btn.setButtonText("Save").setCta().onClick(() => {
+        this.plugin.app.vault.adapter.write("kitrc.md", outputEl.getValue());
+      }));
+    }
+  }
+};
+
 // main.ts
 var import_pklib = __toESM(require_pklib());
 var _log;
-var PKPlugin = class extends import_obsidian6.Plugin {
+var PKPlugin = class extends import_obsidian7.Plugin {
   constructor() {
     super(...arguments);
     __privateAdd(this, _log, (...args) => {
       this.verbose && console.log(`Darren's Publishkit \u2794`, ...args);
     });
     this.notice = (str, time = 4e3) => {
-      new import_obsidian6.Notice(str, time);
+      new import_obsidian7.Notice(str, time);
     };
     this.init = () => {
       const { pklib } = this;
@@ -17581,6 +17615,7 @@ var PKPlugin = class extends import_obsidian6.Plugin {
           return;
         this.runCommand("displayStatus", file);
       });
+      this.addSettingTab(new SettingTab(this.app, this));
       this.registerObsidianProtocolHandler("darrens-kit/export-full", async (e) => {
         const files = await this.pklib.vault.lsFiles();
         const result = await this.pklib.exportFile(files, { dry: false });

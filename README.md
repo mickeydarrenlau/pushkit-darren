@@ -6,7 +6,7 @@ This is a custom version of the original plugin from https://github.com/publishk
 Change Log of what I edited (Currently 1.0.0)
 1. Added obsidian://darrens-kit/export-full for exporting the whole vault without intervention - Added in 0.2.0
 2. Added settings page - Added in 1.0.0
-
+    
 
 - the plugin is desktop only (uses node filesystem)
 - it has only been tested on mac

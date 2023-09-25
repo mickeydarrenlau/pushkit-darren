@@ -17620,6 +17620,9 @@ var PKPlugin = class extends import_obsidian7.Plugin {
         const files = await this.pklib.vault.lsFiles();
         const result = await this.pklib.exportFile(files, { dry: false });
       });
+      this.registerObsidianProtocolHandler("darrens-kit/setup", async (e) => {
+        this.initSetup();
+      });
       __privateGet(this, _log).call(this, "inited");
     };
     this.displayStatus = async (file) => {

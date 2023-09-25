@@ -86,6 +86,10 @@ class PKPlugin extends Plugin {
 			const result = await this.pklib.exportFile(files, { dry: false });
 		})
 
+		this.registerObsidianProtocolHandler("darrens-kit/setup", async (e) => {
+			this.initSetup()
+		})
+
 		this.#log("inited");
 	};
 
